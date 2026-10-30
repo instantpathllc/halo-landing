@@ -3,119 +3,500 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIVIC AXIS — Early Access</title>
+
+  <title>Instant Path LLC — Clearer Processes. Practical Next Steps.</title>
+
+  <meta
+    name="description"
+    content="Instant Path LLC offers focused business problem reviews and develops digital tools and interactive demonstrations for clearer workflows, decisions, and coordination."
+  >
+
   <style>
+    :root {
+      color-scheme: dark;
+      --background: #0a0a0f;
+      --panel: #12121d;
+      --text: #e6e6f0;
+      --muted: #bfc1d6;
+      --teal: #7df9ff;
+      --lavender: #b8a8ff;
+      --border: #2a2b40;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background: #0a0a0f;
-      color: #e6e6f0;
+      background: var(--background);
+      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--teal);
+      text-underline-offset: 4px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--lavender);
+      outline-offset: 5px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 20px;
-      text-align: center;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    .hero {
+      padding: 84px 0 60px;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #7df9ff, #b8a8ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin: 0 0 24px;
+      color: #b5dfff;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-top: 40px;
-      color: #cfcff7;
+      margin: 0 0 18px;
+      color: #d5cffb;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 1.15rem;
+      line-height: 1.4;
     }
 
     p {
-      font-size: 1.1rem;
-      color: #d4d4e8;
-      margin-bottom: 20px;
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 740px;
+      font-size: 1.15rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--teal);
+      border-radius: 8px;
+      background: var(--teal);
+      color: #0a0a0f;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .button:hover {
+      background: #b5fcff;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border-color: #626781;
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      background: #1b1d2c;
     }
 
     .section {
-      margin-top: 50px;
-      padding: 20px;
-      border: 1px solid #1f1f2e;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.03);
+      padding: 48px 0;
+      scroll-margin-top: 24px;
     }
 
-    .cta {
-      margin-top: 40px;
+    .section-intro {
+      max-width: 740px;
+      margin-bottom: 28px;
     }
 
-    .cta input[type="email"] {
-      padding: 12px;
-      width: 70%;
-      max-width: 350px;
-      border-radius: 6px;
-      border: none;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 4px 10px;
+      border: 1px solid #45405f;
+      border-radius: 20px;
+      color: #d5cffb;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .demo-panel {
+      padding: 36px;
+      border: 1px solid #3d5870;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #12212c, #191526);
+    }
+
+    .demo-panel .description {
+      max-width: 760px;
+    }
+
+    .demo-points {
+      padding-left: 22px;
+      margin: 20px 0;
+      color: var(--muted);
+    }
+
+    .demo-points li {
       margin-bottom: 10px;
-      font-size: 1rem;
     }
 
-    .cta button {
-      padding: 12px 24px;
-      background: #7df9ff;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      color: #0a0a0f;
-      font-weight: bold;
+    .disclosure {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #435064;
+      font-size: 0.9rem;
+    }
+
+    .approach {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--panel);
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 36px;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       font-size: 0.9rem;
-      color: #777;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 760px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 56px 0 36px;
+      }
+
+      .section {
+        padding: 32px 0;
+      }
+
+      .demo-panel,
+      .approach {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>CIVIC AXIS</h1>
-    <p>A purpose-aware civic intelligence platform.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Instant Path LLC</a>
 
-    <div class="section">
-      <h2>What CIVIC AXIS Does</h2>
-      <p>CIVIC AXIS turns raw civic complexity into clarity.</p>
-      <p>It helps reveal emerging patterns and alignment across wellbeing, stability, equity, resilience, and agency—showing what systems are becoming, not just what they are.</p>
+      <nav aria-label="Main navigation">
+        <a href="#services">Our Work</a>
+        <a href="#demo">Interactive Demo</a>
+        <a href="#approach">Our Approach</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>Why CIVIC AXIS Exists</h2>
-      <p>Cities don’t need more dashboards.</p>
-      <p>They need intelligence that understands purpose.</p>
-      <p>CIVIC AXIS brings coordination, context, and operational clarity together—giving leaders a new way to see the world.</p>
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="eyebrow">Clarity · Coordination · Practical Progress</p>
+
+      <h1 id="hero-heading">
+        Clearer processes.<br>
+        Practical next steps.
+      </h1>
+
+      <p class="lead">
+        Instant Path LLC helps founders and business owners examine
+        workflow challenges, clarify responsibilities, and identify
+        practical ways forward.
+      </p>
+
+      <p class="lead">
+        Our work combines focused business reviews, planning resources,
+        and the development of digital tools that make complex processes
+        easier to understand.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="https://demo.instantpathllc.site">
+          Explore the Free Interactive Demo
+        </a>
+
+        <a class="button secondary" href="#services">
+          Explore Our Work
+        </a>
+      </div>
+    </section>
+
+    <section
+      id="services"
+      class="section"
+      aria-labelledby="services-heading"
+    >
+      <div class="section-intro">
+        <p class="eyebrow">What We Do</p>
+
+        <h2 id="services-heading">
+          Start with the problem—not a predetermined product.
+        </h2>
+
+        <p>
+          A useful starting point is one concrete challenge:
+          a confusing handoff, unclear ownership, a difficult decision,
+          or a process that is harder to explain than it should be.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Focused Business Problem Reviews</h3>
+
+          <p>
+            Examine one workflow or coordination challenge, identify
+            friction, and develop clear recommendations and practical
+            next steps based on your priorities and constraints.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Planning &amp; Reflection Resources</h3>
+
+          <p>
+            Self-guided resources designed to help organize ideas,
+            explore options, and turn competing priorities into a
+            more manageable plan.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="label">Development Work</span>
+
+          <h3>Interactive Process Demonstrations</h3>
+
+          <p>
+            We are developing reusable tools for creating clickable
+            simulations that explain a process: who takes each step,
+            where a decision happens, and what comes next.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section
+      id="demo"
+      class="section"
+      aria-labelledby="demo-heading"
+    >
+      <div class="demo-panel">
+        <p class="eyebrow">See the Approach in Action</p>
+
+        <h2 id="demo-heading">
+          CIVIC AXIS: One shared situation. Different responsibilities.
+        </h2>
+
+        <div class="description">
+          <p>
+            CIVIC AXIS is a project in development at Instant Path LLC
+            exploring human-led coordination and clearer decision-making.
+          </p>
+
+          <p>
+            Our free interactive demonstration uses a fictional
+            community-center access scenario to make responsibilities,
+            differing perspectives, and human approval visible.
+          </p>
+        </div>
+
+        <ul class="demo-points">
+          <li>Explore a shared situation from different responsibility views.</li>
+          <li>Follow a proposed response through human review and decision points.</li>
+          <li>Consider how clearer handoffs could help explain a process in your organization.</li>
+        </ul>
+
+        <div class="actions">
+          <a class="button" href="https://demo.instantpathllc.site">
+            Launch the Free Demo
+          </a>
+        </div>
+
+        <p class="disclosure">
+          Simulation only. This demonstration is not a live operational
+          service or a completed reusable demo-generation product.
+          Responsibility views illustrate a process; they are not
+          authentication or access controls for real operations.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="applications"
+      class="section"
+      aria-labelledby="applications-heading"
+    >
+      <div class="section-intro">
+        <p class="eyebrow">Where a Conversation Might Start</p>
+
+        <h2 id="applications-heading">
+          Make the handoffs easier to see.
+        </h2>
+
+        <p>
+          A focused review could explore customer-request routing,
+          staff and vendor coordination, approval steps, or internal
+          communication. For property-management teams, examples might
+          include maintenance-request handoffs or resident communication
+          procedures.
+        </p>
+
+        <p>
+          These are potential review topics—not claims of existing
+          integrations or deployed solutions. The starting point is
+          understanding your actual process and whether our approach fits.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="approach"
+      class="section"
+      aria-labelledby="approach-heading"
+    >
+      <div class="approach">
+        <p class="eyebrow">Our Approach</p>
+
+        <h2 id="approach-heading">
+          Human judgment stays at the center.
+        </h2>
+
+        <p>
+          We believe useful tools should support people’s understanding
+          and decisions—not obscure responsibility or replace their authority.
+        </p>
+
+        <p>
+          That means starting with a defined problem, keeping the scope
+          manageable, and being clear about what is available today,
+          what is still in development, and what requires further review.
+        </p>
+
+        <p>
+          Interested in discussing a challenge? Reply to the person who
+          shared this page and ask about a focused business problem review.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Instant Path LLC · Ventura, California</p>
+      <p>Digital tools. Clearer coordination. Practical next steps.</p>
     </div>
-
-    <div class="section cta">
-      <h2>Early Access</h2>
-      <p>Be one of the first inside the system.</p>
-
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your email" required>
-        <br>
-        <button type="submit">Request Invite</button>
-      </form>
-
-      <p style="margin-top:10px; font-size:0.9rem;">Your email is only used for early access.</p>
-    </div>
-
-    <footer>
-      Built by Instant Path LLC — Ventura, CA
-    </footer>
-  </div>
+  </footer>
 </body>
 </html>
