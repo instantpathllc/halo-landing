@@ -21,6 +21,8 @@
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   background: var(--background);
@@ -162,6 +164,11 @@ p {
 
 .button:hover { background: #b5fcff; }
 
+.button.large {
+  padding: 16px 30px;
+  font-size: 1.05rem;
+}
+
 .button.secondary {
   background: transparent;
   border-color: #626781;
@@ -281,6 +288,7 @@ footer p { margin-bottom: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .button { transition: none; }
 }
 </style>
@@ -342,8 +350,9 @@ footer p { margin-bottom: 6px; }
       <p>
         Arriving from Skip? Find the offer you came for below.
         The Clarity Kit and Pattern Reflection link to their Skip
-        listings for purchase. The paid Simulation Evaluation Pilot
-        is described further down the page.
+        listings for purchase. The 14-day Simulation Evaluation Pilot
+        is described in its own section further down this page, with
+        a link to its Skip listing.
       </p>
 
       <p>
@@ -537,27 +546,47 @@ footer p { margin-bottom: 6px; }
 
       <div class="description">
         <p>
-          The CIVIC AXIS Simulation Evaluation Pilot is a hands-on
-          evaluation beyond the free demo: a 26-agent simulation plus
-          read-only probe status in a private viewer. It is $499 as
-          a one-time purchase.
+          The CIVIC AXIS Simulation Evaluation Pilot helps you judge
+          whether human-led coordination fits your team’s handoffs and
+          responsibilities. Beyond the free demo, you get a 26-agent
+          simulation plus read-only probe status in a private viewer.
+          It is $499 as a one-time purchase and does not renew.
         </p>
 
+        <h3>What you receive</h3>
         <ul class="points">
           <li>Private, read-only viewer access for up to 2 named users for 14 days</li>
           <li>One 30-minute remote walkthrough call</li>
           <li>A one-page summary within 5 business days after the pilot ends</li>
         </ul>
 
+        <h3>What you can use it for</h3>
+        <ul class="points">
+          <li>Walk a team through a handoff scenario, such as a maintenance request or a volunteer shift change.</li>
+          <li>See how responsibility passes between roles in a shared situation.</li>
+          <li>Give a manager or board a concrete picture before deciding whether to explore the idea further.</li>
+        </ul>
+
+        <h3>How it works</h3>
+        <p>
+          Buy on Skip, then email
+          <a href="mailto:support@instantpathllc.site?subject=Simulation%20Evaluation%20Pilot%20access&amp;body=Your%20name%3A%0D%0A%0D%0AOrganization%3A%0D%0A%0D%0ANames%20of%20up%20to%202%20users%3A%0D%0A">support@instantpathllc.site</a>
+          with your name, organization, and the names of up to two
+          users. We issue access and schedule your call. Access ends
+          after 14 days.
+        </p>
+
         <p>
           Real-device integration, custom development, data hosting,
           and use in emergency or operational decisions are not included.
-          Full details, including the refund terms, are on the Skip listing.
+          Full refund before access is issued; after that, none unless
+          we fail to deliver what is listed. Full details are on the
+          Skip listing.
         </p>
       </div>
 
       <div class="actions">
-        <a class="button"
+        <a class="button large"
            href="https://helloskip.com/b/instantpath/product/civic-axis-simulation-evaluation-pilot-14-day-access-cxueew88pbsf">
           View &amp; Buy on Skip — $499
         </a>
